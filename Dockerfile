@@ -27,3 +27,4 @@ RUN locale-gen en_US
 RUN cd && git clone git://github.com/ggreer/the_silver_searcher.git
 RUN apt-get install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
 RUN cd the_silver_searcher && sh build.sh && make install
+RUN apt-get install -y nodejs
