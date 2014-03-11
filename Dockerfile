@@ -1,5 +1,7 @@
 FROM stackbrew/ubuntu:saucy
+
 MAINTAINER Tomasz Tokarski tomasz@tomasztokarski.com
+
 RUN apt-get update
 RUN apt-get dist-upgrade -y
 RUN apt-get install -y tmux
@@ -28,3 +30,5 @@ RUN cd && git clone git://github.com/ggreer/the_silver_searcher.git
 RUN apt-get install -y automake pkg-config libpcre3-dev zlib1g-dev liblzma-dev
 RUN cd the_silver_searcher && sh build.sh && make install
 RUN apt-get install -y nodejs
+
+ENTRYPOINT zsh -c tmux
